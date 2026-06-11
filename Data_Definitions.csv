@@ -1,0 +1,50 @@
+﻿Table Name,Column Name,Data Type,Description
+users,user_id,INT (PK),Primary Key. Unique identifier for each user/company.
+users,user_name,VARCHAR(255),Company or account name.
+users,company_name,VARCHAR(255),The organization name.
+users,region,VARCHAR(50),"Geographic location (US, EU, APAC, LATAM)."
+users,department,VARCHAR(100),"Internal team (Marketing, Sales, Analytics)."
+users,is_active_sub,BOOLEAN,True if they are an active subscriber.
+users,signup_date,DATETIME,When the user registered (ISO 8601 DateTime).
+users,created_at,TIMESTAMP,Auto-generated timestamp when record is created.
+campaigns,campaign_id,INT (PK),Primary Key. Unique identifier for each campaign.
+campaigns,campaign_name,VARCHAR(255),Name/title of the campaign.
+campaigns,channel,VARCHAR(50),"Marketing channel (Email, Social, Paid Search, Content, Event, Referral)."
+campaigns,budget_allocated,"DECIMAL(10,2)",Total budget allocated (USD).
+campaigns,start_date,DATE,Campaign start date.
+campaigns,end_date,DATE,Campaign end date.
+campaigns,status,VARCHAR(20),"Campaign status (Active, Completed, Paused)."
+campaigns,target_region,VARCHAR(50),"Geographic region targeted (US, EU, APAC, LATAM)."
+campaigns,campaign_owner,VARCHAR(100),Team member responsible for the campaign.
+campaigns,created_at,TIMESTAMP,Auto-generated timestamp when record is created.
+leads,lead_id,INT (PK),Primary Key. Unique identifier for each lead.
+leads,first_name,VARCHAR(100),Lead's first name.
+leads,last_name,VARCHAR(100),Lead's last name.
+leads,email,VARCHAR(255),Lead's email address.
+leads,company_name,VARCHAR(255),Company the lead works for.
+leads,industry,VARCHAR(100),"Industry vertical (Technology, Finance, Healthcare, Retail, etc.)."
+leads,lead_source,VARCHAR(50),"How the lead was acquired (Organic, Paid Ad, Email, Social, Event, Referral)."
+leads,lead_quality_score,INT,Numeric score (1-100) indicating lead quality.
+leads,campaign_id,INT (FK),Foreign Key linking to campaigns table.
+leads,signup_date,DATETIME,When the lead was created/registered.
+leads,last_activity_date,DATETIME,Last interaction with the lead.
+leads,region,VARCHAR(50),"Geographic location (US, EU, APAC, LATAM)."
+leads,created_at,TIMESTAMP,Auto-generated timestamp when record is created.
+conversion_events,event_id,INT (PK),Primary Key. Unique identifier for each event.
+conversion_events,lead_id,INT (FK),Foreign Key linking to leads table.
+conversion_events,campaign_id,INT (FK),Foreign Key linking to campaigns table.
+conversion_events,event_type,VARCHAR(50),"Type of event (Click, Open, Download, Demo Request, Purchase, Page View)."
+conversion_events,event_value,"DECIMAL(10,2)",Monetary value if applicable (USD). 0 for non-purchase events.
+conversion_events,timestamp,DATETIME,When the event occurred (ISO 8601 DateTime).
+conversion_events,page_url,VARCHAR(500),URL of the page where the event occurred.
+conversion_events,device_type,VARCHAR(20),"Device used (Desktop, Mobile, Tablet)."
+conversion_events,created_at,TIMESTAMP,Auto-generated timestamp when record is created.
+marketing_spend,spend_id,INT (PK),Primary Key. Unique identifier for each spend record.
+marketing_spend,campaign_id,INT (FK),Foreign Key linking to campaigns table.
+marketing_spend,channel,VARCHAR(50),"Marketing channel (Email, Social, Paid Search, Content, Event)."
+marketing_spend,spend_date,DATE,Date of the spend.
+marketing_spend,amount_spent,"DECIMAL(10,2)",Total amount spent that day (USD).
+marketing_spend,impressions,INT,Number of impressions generated.
+marketing_spend,clicks,INT,Number of clicks received.
+marketing_spend,conversions,INT,Number of conversions that day.
+marketing_spend,created_at,TIMESTAMP,Auto-generated timestamp when record is created.
