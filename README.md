@@ -131,16 +131,6 @@ TDK-Marketing-Intelligence-n8n/
 
 ---
 
-## 📸 Screenshots
-
-### n8n Workflow
-![Workflow](workflow_screenshot.png)
-
-### Scheduled Auto Run Email (8:00 AM)
-![Email Output](scheduled_auto_run_email_output.png)
-
----
-
 ## 👤 Author
 
 **Akshay Chandrashekar**
